@@ -1,6 +1,15 @@
 @extends('admin.layuots.app_admin')
 
 @section('content')
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        @component('admin.components.breadcrumb')
+            @slot('title') Панель администрирования @endslot
+            @slot('parent') @endslot
+            @slot('active') Главная @endslot
+        @endcomponent
+    </section>
+    <!-- Main Contents -->
     <section class="content">
         <!-- Info boxes -->
         <div class="row">
