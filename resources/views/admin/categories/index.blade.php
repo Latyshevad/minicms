@@ -1,13 +1,12 @@
-@extends('admin.layuots.app_admin')
+@extends('admin.layouts.app_admin')
 
 @section('content')
-    <section class="content-header">
-        @component('admin.components.breadcrumb')
-            @slot('title') Список категорий @endslot
-            @slot('parent') Главная @endslot
-            @slot('active') Категории @endslot
-        @endcomponent
-    </section>
+
+    @component('admin.components.breadcrumb')
+        @slot('title') Список категорий @endslot
+        @slot('parent') Главная @endslot
+        @slot('active') Категории @endslot
+    @endcomponent
 
     <!-- Main Contents -->
     <section class="content">
@@ -55,10 +54,16 @@
                                     <td>{{$category->title}}</td>
                                     <td>{{$category->published}}</td>
                                     <td>
-                                        <a href="{{route('admin.category.edit', ['id'=>$category->id])}}"
-                                           class="btn btn-default"><i class="fa fa-edit"></i></a>
-                                        <a href="{{route('admin.category.destroy', ['id'=>$category->id])}}"
-                                           class="btn btn-danger"><i class="fa fa-trash"></i></a>
+
+                                        <form onsubmit="if(confirm('Удалить категорию?')){return true;}else{return false}" action="{{route('admin.category.destroy', $category)}}" method="post">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            {{csrf_field()}}
+
+                                            <a href="{{route('admin.category.edit', $category)}}"
+                                               class="btn btn-default"><i class="fa fa-edit"></i></a>
+
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

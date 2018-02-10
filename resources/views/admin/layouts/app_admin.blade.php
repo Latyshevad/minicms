@@ -36,9 +36,9 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-    @include('admin.layuots.header')
+    @include('admin.layouts.header')
     <!-- Left side column. contains the logo and sidebar -->
-    @include('admin.layuots.sidebar')
+    @include('admin.layouts.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -48,10 +48,10 @@
     </div>
     <!-- /.content-wrapper -->
 
-    @include('admin.layuots.futer')
+    @include('admin.layouts.futer')
 
     <!-- Control Sidebar -->
-    @include('admin.layuots.rightsidebar')
+    @include('admin.layouts.rightsidebar')
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
