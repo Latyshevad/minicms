@@ -54,7 +54,6 @@
                                     <td>{{$category->title}}</td>
                                     <td>{{$category->published}}</td>
                                     <td>
-
                                         <form onsubmit="if(confirm('Удалить категорию?')){return true;}else{return false}" action="{{route('admin.category.destroy', $category)}}" method="post">
                                             <input type="hidden" name="_method" value="DELETE">
                                             {{csrf_field()}}
