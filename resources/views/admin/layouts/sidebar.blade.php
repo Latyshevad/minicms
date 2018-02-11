@@ -35,7 +35,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active"><a href="{{route("admin.category.index")}}"><i class="fa fa-circle-o"></i> Управление категориями</a></li>
-                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Управление записями</a></li>
+                    <li><a href="{{route("admin.article.index")}}"><i class="fa fa-circle-o"></i> Управление записями</a></li>
                     <li><a href="index2.html"><i class="fa fa-circle-o"></i> Настройки блога</a></li>
                 </ul>
             </li>
